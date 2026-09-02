@@ -4,21 +4,24 @@
   "description": "Lightweight dashboard for small apps",
   "author": "Jaber Qayad",
   "license": "MIT",
-  "homepage": "https://jaberio.github.io/dashlet/",
+  "homepage": "https://jaberqayad.github.io/dashlet/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaberio/dashlet.git"
+    "url": "https://github.com/JaberQayad/dashlet.git"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "serve . -l 8989",
+    "start": "node server.js",
     "build": "sass app/css/main.scss:app/css/main.css --no-source-map --style compressed",
     "dev": "concurrently \"npm run sass:watch\" \"npm run serve:dev\"",
-    "serve:dev": "live-server app --port=8989",
-    "sass:watch": "sass --watch app/css/main.scss:app/css/main.css"
+    "serve:dev": "node server.js",
+    "sass:watch": "sass --watch app/css/main.scss:app/css/main.css",
+    "playground:dev": "concurrently \"npm run playground:sass:watch\" \"npm run playground:serve\"",
+    "playground:serve": "live-server playground --port=8990",
+    "playground:sass:watch": "sass --watch playground/css/main.scss:playground/css/main.css"
   },
   "dependencies": {
-    "serve": "^14.2.4"
+    "express": "^4.21.2"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",

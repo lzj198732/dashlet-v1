@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir -p data public
+
 # Check if config exists in the public directory; if not, create an empty one
 if [ ! -f public/config.json ]; then
     echo "Config not found, creating empty default..."

@@ -2,10 +2,5 @@ dist
 node_modules
 config.yaml
 DEPLOY.md
-playground/
-.env
-.vscode/
-*.log
-*.tmp
-PLANS.md
-.venv
+playground
+app/data

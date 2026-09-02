@@ -1,11 +1,12 @@
-version: "3.8"
-
 services:
   dashlet:
-    image: ghcr.io/jaberio/dashlet:latest
+    build: .
+    image: jaypel/dashlet:latest
     container_name: dashlet
-    restart: unless-stopped
     ports:
       - "8989:8989"
     volumes:
+      # Mount the 'public' directory. Docker will populate it if empty.
       - ./app/public:/app/public
+      - ./app/data:/app/data
+    restart: unless-stopped

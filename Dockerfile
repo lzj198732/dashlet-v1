@@ -6,7 +6,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY app .
-
+COPY server.js ./server.js
 
 RUN npx sass css/main.scss:css/main.css --no-source-map --style compressed
 
